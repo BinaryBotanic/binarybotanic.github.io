@@ -26,6 +26,7 @@ body {
 
   /* Colours */
   --color-primary:   #699953;
+  --color-primary-trans: rgba(70, 101, 55, 0.5);
   --color-text:      #222;
   --nav-bg:          #699953;
   --nav-link:        #e0f0ff;
@@ -38,6 +39,7 @@ body {
    ============================================================== */
 .ContentCreation {
   --color-primary:   #836d58;
+  --color-primary-trans: rgba(131, 109, 88, 0.5);
   --color-text:      #222;
   --nav-bg:          #836d58;
   --nav-link:        #e0f0ff;
@@ -93,11 +95,26 @@ a:hover { text-decoration: none; }
   justify-content: center;
   text-align: center;
   min-height: 100vh;
+  height: auto;
   padding: 2rem;
   z-index: 1;
-  background: cover no-repeat;
+  background-size: cover;      /* always fill the container, keep aspect ratio */
+  background-position: center; /* keep the focal point centered */
+  background-repeat: no-repeat;
+  background-attachment: scroll;   
   color: var(--nav-link);
 }
+
+.hero-content {
+  /* 1️⃣ Make the box shrink‑wrap its children */
+  display: inline-block;       /* fits tightly to the text */
+  padding: 1.2rem 1.6rem;              /* space around the text */
+  border-radius: 0.8rem;               /* optional rounded corners */
+  background: var(--color-primary-trans);     /* semi‑transparent dark overlay */
+  backdrop-filter: blur(4px);          /* subtle frosted‑glass feel (optional) */
+  box-shadow: 0 4px 12px rgba(0,0,0,.3);/* slight depth */
+}
+
 .hero::before {
   content: "";
   position: absolute;
