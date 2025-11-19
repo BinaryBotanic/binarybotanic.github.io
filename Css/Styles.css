@@ -25,8 +25,8 @@ body {
     --font-subhead:   'Ranga', cursive;
 
   /* Colours */
-  --color-primary:   #699953;    /* CTA / link colour */
-  --color-text:      #222;       /* default text colour */
+  --color-primary:   #699953;
+  --color-text:      #222;
   --nav-bg:          #699953;
   --nav-link:        #e0f0ff;
   --nav-hover-bg:    #699953;
@@ -37,9 +37,8 @@ body {
    03. PAGE‑SPECIFIC THEME – ContentCreation
    ============================================================== */
 .ContentCreation {
-  /* Overrides for this page only */
-  --color-primary:   #836d58;   /* calm blue CTA */
-  --color-text:      #222;  /* deep navy body text */
+  --color-primary:   #836d58;
+  --color-text:      #222;
   --nav-bg:          #836d58;
   --nav-link:        #e0f0ff;
   --nav-hover-bg:    #836d58;
