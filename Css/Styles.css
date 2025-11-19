@@ -1,326 +1,275 @@
-/* --------------------------------------------------------------
-   IMPORT GOOGLE FONTS
-   -------------------------------------------------------------- */
+/* ==========================================
+   01. IMPORTS & GLOBAL RESET
+   ============================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Megrim&family=Ranga&family=Biryani:wght@400;700&display=swap');
 
-/* --------------------------------------------------------------
-   GLOBAL RESET & VARIABLES
-   -------------------------------------------------------------- */
-html, body {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;               /* 1 rem ≈ 16 px */
-    line-height: 1.6;
-    background: #fafafa;           /* fallback colour */
-}
-*, *::before, *::after {
-    box-sizing: border-box;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;      /* 1 rem ≈ 16 px */
+  line-height: 1.6;
+  background: #fafafa;           /* fallback colour */
 }
 
-/* Colour & typography palette */
+/* Box‑sizing */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* =========================================================
+   02. DESIGN TOKENS (variables)
+   ============================================================== */
 :root {
+  /* Fonts */
     --font-primary:   'Biryani', sans-serif;
     --font-heading:   'Megrim', cursive;
     --font-subhead:   'Ranga', cursive;
 
-    --color-primary:  #e04444;    /* CTA button / link colour */
-    --color-text:     #222;       /* default text colour */
+  /* Colours */
+  --color-primary:   #699953;    /* CTA / link colour */
+  --color-text:      #222;       /* default text colour */
+  --nav-bg:          #836d58;
+  --nav-link:        #e0f0ff;
+  --nav-hover-bg:    #836d58;
+  --nav-hover-link:  #466537;
 }
 
-/* --------------------------------------------------------------
-   BASE TYPOGRAPHY
-   -------------------------------------------------------------- */
+/* ==============================================================
+   03. PAGE‑SPECIFIC THEME – ContentCreation
+   ============================================================== */
+.ContentCreation {
+  /* Overrides for this page only */
+  --color-primary:   #836d58;   /* calm blue CTA */
+  --color-text:      #222;  /* deep navy body text */
+  --nav-bg:          #836d58;
+  --nav-link:        #e0f0ff;
+  --nav-hover-bg:    #836d58;
+  --nav-hover-link:  #4f4235;
+}
+
+/* ==========================================
+   04. BASE TYPOGRAPHY
+   ============================================================== */
 body {
-    font-family: var(--font-primary);
-    color: var(--color-text);
+  font-family: var(--font-primary);
+  color: var(--color-text);
 }
-h1, .hero h1 .nav li {               font-family: var(--font-heading); }
-h2, h3, .hero h3 {           font-family: var(--font-subhead); }
-h4, h5, h6 {                 font-family: var(--font-primary); }
 
+/* Headings */
+h1,
+.hero h1,
+.nav li { font-family: var(--font-heading); }
+
+h2,
+h3,
+.hero h3 { font-family: var(--font-subhead); }
+
+h4,
+h5,
+h6 { font-family: var(--font-primary); }
+
+/* Links */
 a {
-    color: var(--color-primary);
-    text-decoration: underline;
+  color: var(--color-primary);
+  text-decoration: underline;
 }
 a:hover { text-decoration: none; }
 
-/* --------------------------------------------------------------
-   HERO SECTION
-   -------------------------------------------------------------- */
+/* ==============================================================
+   05. GLOBAL CONTAINER
+   ============================================================== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* ==============================================================
+   06. HERO SECTION
+   ============================================================== */
 .hero {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    padding: 2rem;
-    z-index: 1;
-    color: #ffffff;
-    background: cover no-repeat;
-
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+  z-index: 1;
+  background: cover no-repeat;
+  color: var(--nav-link);
 }
-
-.index .hero {
-  background: url('../Assets/wallpaper.png')
-}
-
-.ContentCreation .hero {
-  background-image: url('../Assets/SocialMedia.png')
-}
-
-.UX .hero {
-  background-image: url('../Assets/SocialMedia.png')
-}
-
 .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.25);
-    opacity: 0.45;
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
 }
 .hero > * { position: relative; z-index: 1; }
 
-.hero h1 { 
-    font-size: clamp(2.5rem, 10vw, 5rem); 
-    margin-bottom: .5rem; 
-    text-shadow: 1px 1px 2px #000000, 0 0 25px #ffffff, 0 0 5px #fff7e3 ; 
+.hero h1 {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  margin-bottom: .5rem;
+  text-shadow: 1px 1px 2px #000000,
+               0 0 25px #ffffff,
+         0 0 5px #fff7e3;
 }
-.hero h3 { 
-    font-size: clamp(1.7rem, 5vw, 2rem); 
-    margin-bottom: 2rem; 
-    text-shadow: 0 0 3px 3px #000000; 
+.hero h3 {
+  font-size: clamp(1.7rem, 5vw, 2rem);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 3px 3px #000000;
 }
 .hero p {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    text-shadow: 0 0 3px 3px #000000;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  text-shadow: 0 0 3px 3px #000000;
 }
 
-/* --------------------------------------------------------------
-NAVIGATION
---------------------------------------------------------------*/
+/* Hero backgrounds (page‑specific) */
+.index .hero            { 
+  background-image: url('../Assets/wallpaper.png'); 
+}
+.ContentCreation .hero { 
+  background-image: url('../Assets/SocialMedia.png'); 
+}
+.UX .hero { 
+  background-image: url('../Assets/SocialMedia.png'); 
+}
+
+/* ==============================================================
+   07. NAVIGATION
+   ============================================================== */
 ul.nav {
-    margin: 0;                     /* Ingen marginal runt <ul> */
-    padding: 0;                    /* Ingen padding runt <ul> */
-    list-style: none;              /* Ta bort punkterna */
-    overflow: hidden;              /* Förhindrar att flytande element “bryter” */
-    background-color: #6a9954;     /* Mörk bakgrund som i ditt exempel */
-    display: flex;                 /* Gör <li>-elementen horisontella */
-    justify-content: center;     /* Centrerar hela raden i mitten av <ul> */
-    align-items: center
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-heading);
 }
-
-/* Länkarna i menyn */
 ul.nav li a {
-    display: flex;               /* Gör länken själv till en flex‑container */
-    justify-content: center;     /* Horisontell centrering av texten */
-    align-items: center;         /* Vertikal centrering av texten */
-    color: white;
-    text-decoration: none;
-    padding: 14px 16px; 
-    font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  font-size: large;
+}
+ul.nav li a:hover { background-color: var(--nav-hover-link); }
+
+/* ==============================================================
+   08. PORTFOLIO BLOCKS – FLEX LAYOUT
+   ============================================================== */
+.portfolio-block {
+  padding: 4rem 0;               /* vertical breathing room */
+}
+.portfolio-block .container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;           /* default direction */
+}
+.portfolio-block .container.reverse { flex-direction: row-reverse; }
+
+.portfolio-block h2 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  margin-bottom: .8rem;
+  color: var(--color-primary);
 }
 
-/* Hover‑effekt */
-ul.nav li a:hover {
-    background-color: #5a8348;
-}
-
-/* (Valfritt) Om du vill ha en annan teckensnittsstil */
-ul.nav {
-    font-family: var(--font-heading);
-}
-
-/* --------------------------------------------------------------
-   GLOBAL CONTAINER
-   -------------------------------------------------------------- */
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding: 1.5rem; 
-}
-
-/* --------------------------------------------------------------
-   PORTFOLIO BLOCKS – FLEX LAYOUT
-   -------------------------------------------------------------- */
-.portfolio-block .container{
-  display:flex;
-  align-items:center;
-  gap:2rem;
-}
-.container h2 {
-    color: #539354;
-}
 /* Columns */
-.content{
-  flex:1 1 55%;
-  min-width:260px;
-  text-align: right;
-
-}
-.content2{
-    flex:1 1 55%;
-    min-width:260px; 
-    text-align: left;
-}
-.visual{
-  flex:0 1 40%;
-  min-width:200px;
-  padding: 5px;
-}
+.content  { flex: 1 1 55%; min-width: 260px; text-align: right; }
+.content2 { flex: 1 1 55%; min-width: 260px; text-align: left; }
+.visual   { flex: 0 1 40%; min-width: 200px; padding: 5px; }
 
 /* Images */
-.visual img{
-  width:80%;
-  height:auto;
-  max-height:340px;
+.visual img {
+  width: 80%;
+  height: auto;
+  max-height: 340px;
   object-fit: contain;
-  border-radius:8px;
+  border-radius: 8px;
 }
 
-/* Default direction = text left, image right */
-.portfolio-block .container{flex-direction:row;}
-
-/* Flip direction when the .reverse class is present */
-.portfolio-block .container.reverse{flex-direction:row-reverse;}
-
-
+/* Image hover effects */
 .visual a {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
 }
-
-/* Bild – mörk i vila */
 .visual a img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: brightness(0.6);
-    transition: filter .35s ease,
-                transform .18s ease-out,
-                box-shadow .35s ease;
+  width: 100%;
+  filter: brightness(0.6);
+  transition: filter .35s ease,
+              transform .18s ease-out,
+              box-shadow .35s ease;
 }
-
-/* Hover – ljusare + zoom + skugga */
 .visual a:hover img {
-    transform: scale(1.04);
-    filter: brightness(1);
-    box-shadow: 0 0 8px 8px rgba(0,0,0,0.2),
-                0 10px 10px 0 rgba(0,0,0,0.19);
+  transform: scale(1.04);
+  filter: brightness(1);
+  box-shadow: 0 0 8px 8px rgba(0,0,0,0.2),
+              0 10px 10px 0 rgba(0,0,0,0.19);
 }
 
-/* Overlay‑bakgrund */
+/* Overlay background */
 .visual a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0);
-    opacity: 0;
-    transition: opacity .35s ease;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  opacity: 0;
+  transition: opacity .35s ease;
 }
-.visual a:hover::after {
-    opacity: 1;
-}
+.visual a:hover::after { opacity: 1; }
 
-/* Texten “Se mer” */
+/* “See more” overlay text */
 .overlay-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6a9954;
-    font-size: 50px;
-    text-shadow: 1px 1px 2px #ffe9bb, 0 0 25px #ffffff, 0 0 5px #fff7e3 ;
-    font-family: var(--font-heading, sans-serif);
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity .35s ease;
-    pointer-events: none;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6a9954;
+  font-size: 50px;
+  text-shadow: 1px 1px 2px #ffe9bb,
+               0 0 25px #ffffff,
+               0 0 5px #fff7e3;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
 }
-.visual a:hover .overlay-text {
-    opacity: 1;
-}
-.h2 {
-    color: #539354;
-}
-/* --------------------------------------------------------------
-   BUTTON STYLE (used in the demo)
-   -------------------------------------------------------------- */
+.visual a:hover .overlay-text { opacity: 1; }
+
+/* ==============================================================
+   09. BUTTON STYLE (demo)
+   ============================================================== */
 .btn-primary {
-    display: inline-block;
-    margin-top: .8rem;
-    padding: .6rem 1.2rem;
-    background: var(--color-primary);
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
+  display: inline-block;
+  margin-top: .8rem;
+  padding: .6rem 1.2rem;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
 }
-.btn-primary:hover {
-    background: #c03939;
-}
+.btn-primary:hover { background: #836d58; }
 
-/* ------------------------------------------------------------------
-   SPACING BETWEEN PORTFOLIO BLOCKS
-   ------------------------------------------------------------------ */
-.portfolio-block {
-    padding: 4rem 0;               /* generous vertical breathing room */
-}
-
-/* Ensure the visual column doesn’t stretch too tall on narrow screens */
-@media (max-width: 768px) {
-    .portfolio-block .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .visual,
-    .content,
-    .content2 {
-        width: 100%;
-        max-width: 500px;
-        text-align: left;
-    }
-    .visual a {
-        margin-bottom: 1rem;
-    }
-}
-
-/* Slightly larger heading for each section */
-.portfolio-block h2 {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    margin-bottom: .8rem;
-    color: #539354;               /* matches your green accent */
-}
-
-/* Make the two‑image Canva row sit side‑by‑side but wrap on mobile */
-.portfolio-block .visual {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-}
-.portfolio-block .visual a {
-    flex: 1 1 45%;                /* roughly half the width */
-    max-width: 250px;
-}
-
-/* -------------------------------------------------
-   FOOTER – grundläggande layout & färger
-   ------------------------------------------------- */
+/* ==============================================================
+   10. FOOTER
+   ============================================================== */
 .site-footer {
-  background: #111;                     /* mörk bakgrund som matchar resten */
-  color: #eee;                          /* ljus text för kontrast */
+  background: #111;
+  color: #eee;
   padding: 3rem 1rem 2rem;
   font-family: var(--font-primary);
 }
-
-/* Container för att centrera innehållet */
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -330,118 +279,99 @@ ul.nav {
   justify-content: space-between;
 }
 
-/* -------------------------------------------------
-   BRAND‑SEKTION
-   ------------------------------------------------- */
+/* Brand section */
 .footer-brand h2 {
   font-family: var(--font-heading);
   font-size: 1.8rem;
   margin: 0;
-  color: #6a9954;
+  color: var(--color-primary);
 }
-.footer-brand .dot {
-  color: #ffffff;               /* liten accent‑punkt */
-}
-.footer-brand .tagline {
+.footer-brand .dot    { color: #fff; }
+.footer-brand .tagline{
   margin-top: .4rem;
-  font-size: 0.95rem;
-  color: #ffffff
+  font-size: .95rem;
+  color: #fff;
 }
 
-/* -------------------------------------------------
-   NAVIGATION
-   ------------------------------------------------- */
+/* Footer navigation */
 .footer-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.footer-nav li {
-  margin-bottom: .6rem;
-}
+.footer-nav li { margin-bottom: .6rem; }
 .footer-nav a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: .95rem;
   transition: color .2s ease;
 }
-.footer-nav a:hover {
-  color: #5a8348;
-}
+.footer-nav a:hover { color: var(--nav-hover-link) }
 
-/* -------------------------------------------------
-   SOCIAL ICONS – vertikal lista, ikon + text på samma rad
-   ------------------------------------------------- */
+/* Social icons */
 .footer-social {
-  display: flex;               /* staplar barnen vertikalt */
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  flex-direction: column;      /* varje <a> blir en egen rad */
-  gap: 0.9rem;                 /* avstånd mellan raderna */
+  gap: .9rem;
 }
-
-/* Enskild rad – ikon + text */
 .social-item {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;         /* ikon och text på samma höjd */
-  gap: 0.6rem;                 /* avstånd mellan ikon och text */
-  padding: 0.45rem 0.7rem;     /* lite “träffyta” så hela raden är klickbar */
-  border-radius: 0.5rem;
+  align-items: center;
+  gap: .6rem;
+  padding: .45rem .7rem;
+  border-radius: .5rem;
   background: #ffffff14;
   text-decoration: none;
   transition: background .3s ease, transform .2s ease;
 }
-
-/* Hover‑effekt – samma som tidigare men på hela raden */
 .social-item:hover {
-  background: #539354;
+  background: var(--nav-hover-link);
   transform: translateY(-2px);
-  
 }
-
 .social-item svg {
-  fill: #539354;
+  fill: var(--color-primary);
   width: 1.5rem;
   height: 1.5rem;
 }
-
-.social-item:hover .social-label {
-    color: #272727; 
-}
-
-.social-item:hover svg {
-    fill: #272727;
-}
-/* Texten bredvid ikonen */
+.social-item:hover svg { fill: #272727; }
 .social-label {
-  color: #539354;
-  font-size: 0.96rem;
+  color: var(--color-primary);
+  font-size: .96rem;
   font-family: var(--font-primary);
 }
+.social-item:hover .social-label { color: #272727; }
 
-/* Responsiv – om skärmen blir väldigt smal, centrera hela listan */
-@media (max-width: 480px) {
-  .footer-social {
-    align-items: center;   /* centrerar raderna på mobila */
-  }
-}
-
-/* -------------------------------------------------
-   COPYRIGHT‑RADEN
-   ------------------------------------------------- */
+/* Copyright line */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255,255,255,.15);
   margin-top: 2rem;
   padding-top: 1rem;
   text-align: center;
-  font-size: 0.85rem;
-  color: #6a9954
+  font-size: .85rem;
+  color: var(--color-primary);
 }
 
-/* -------------------------------------------------
-   RESPONSIV DESIGN
-   ------------------------------------------------- */
+/* ==============================================================
+   11. RESPONSIVE ADJUSTMENTS
+   ============================================================== */
 @media (max-width: 768px) {
+  /* Portfolio – stack on narrow screens */
+  .portfolio-block .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .visual,
+  .content,
+ .content2 {
+   width: 100%;
+    max-width: 500px;
+    text-align: left;
+  }
+  .visual a { margin-bottom: 1rem; }
+
+  /* Footer – vertical layout */
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -453,10 +383,11 @@ ul.nav {
     justify-content: center;
     gap: .8rem;
   }
-  .footer-nav li {
-    margin: 0;
-  }
-    .footer-social {
-    align-items: center;   /* centrerar hela kolumnen */
-  }
+  .footer-nav li { margin: 0; }
+  .footer-social { align-items: center; }
+}
+
+/* Small phones – centre social list */
+@media (max-width: 480px) {
+  .footer-social { align-items: center; }
 }
