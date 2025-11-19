@@ -1,6 +1,6 @@
 /* ==========================================
-   01. IMPORTS & GLOBAL RESET
-   ============================================================== */
+IMPORTS & GLOBAL RESET
+============================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Megrim&family=Ranga&family=Biryani:wght@400;700&display=swap');
 
 html,
@@ -16,8 +16,8 @@ body {
 *, *::before, *::after { box-sizing: border-box; }
 
 /* =========================================================
-   02. DESIGN TOKENS (variables)
-   ============================================================== */
+DESIGN TOKENS
+============================================================== */
 :root {
   /* Fonts */
     --font-primary:   'Biryani', sans-serif;
@@ -35,8 +35,8 @@ body {
 }
 
 /* ==============================================================
-   03. PAGE‑SPECIFIC THEME – ContentCreation
-   ============================================================== */
+PAGE‑SPECIFIC THEME – ContentCreation
+============================================================== */
 .ContentCreation {
   --color-primary:   #836d58;
   --color-primary-trans: rgba(131, 109, 88, 0.5);
@@ -48,14 +48,13 @@ body {
 }
 
 /* ==========================================
-   04. BASE TYPOGRAPHY
-   ============================================================== */
+BASE TYPOGRAPHY
+============================================================== */
 body {
   font-family: var(--font-primary);
   color: var(--color-text);
 }
 
-/* Headings */
 h1,
 .hero h1,
 .nav li { font-family: var(--font-heading); }
@@ -68,7 +67,6 @@ h4,
 h5,
 h6 { font-family: var(--font-primary); }
 
-/* Links */
 a {
   color: var(--color-primary);
   text-decoration: underline;
@@ -76,8 +74,8 @@ a {
 a:hover { text-decoration: none; }
 
 /* ==============================================================
-   05. GLOBAL CONTAINER
-   ============================================================== */
+GLOBAL CONTAINER
+============================================================== */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -85,8 +83,8 @@ a:hover { text-decoration: none; }
 }
 
 /* ==============================================================
-   06. HERO SECTION
-   ============================================================== */
+HERO SECTION
+============================================================== */
 .hero {
   position: relative;
   display: flex;
@@ -98,21 +96,20 @@ a:hover { text-decoration: none; }
   height: auto;
   padding: 2rem;
   z-index: 1;
-  background-size: cover;      /* always fill the container, keep aspect ratio */
-  background-position: center; /* keep the focal point centered */
+  background-size: cover;
+  background-position: center; 
   background-repeat: no-repeat;
   background-attachment: scroll;   
   color: var(--nav-link);
 }
 
 .hero-content {
-  /* 1️⃣ Make the box shrink‑wrap its children */
-  display: inline-block;       /* fits tightly to the text */
-  padding: 1.2rem 1.6rem;              /* space around the text */
-  border-radius: 0.8rem;               /* optional rounded corners */
-  background: var(--color-primary-trans);     /* semi‑transparent dark overlay */
-  backdrop-filter: blur(4px);          /* subtle frosted‑glass feel (optional) */
-  box-shadow: 0 4px 12px rgba(0,0,0,.3);/* slight depth */
+  display: inline-block;
+  padding: 1.2rem 1.6rem;
+  border-radius: 0.8rem;
+  background: var(--color-primary-trans);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.3);
 }
 
 .hero::before {
@@ -141,7 +138,7 @@ a:hover { text-decoration: none; }
   text-shadow: 0 0 3px 3px #000000;
 }
 
-/* Hero backgrounds (page‑specific) */
+/* Hero backgrounds */
 .index .hero            { 
   background-image: url('../Assets/wallpaper.png'); 
 }
@@ -153,8 +150,8 @@ a:hover { text-decoration: none; }
 }
 
 /* ==============================================================
-   07. NAVIGATION
-   ============================================================== */
+NAVIGATION
+============================================================== */
 ul.nav {
   margin: 0;
   padding: 0;
@@ -178,16 +175,16 @@ ul.nav li a {
 ul.nav li a:hover { background-color: var(--nav-hover-link); }
 
 /* ==============================================================
-   08. PORTFOLIO BLOCKS – FLEX LAYOUT
-   ============================================================== */
+PORTFOLIO BLOCKS
+============================================================== */
 .portfolio-block {
-  padding: 4rem 0;               /* vertical breathing room */
+  padding: 4rem 0;
 }
 .portfolio-block .container {
   display: flex;
   align-items: center;
   gap: 2rem;
-  flex-direction: row;           /* default direction */
+  flex-direction: row;
 }
 .portfolio-block .container.reverse { flex-direction: row-reverse; }
 
@@ -263,8 +260,8 @@ ul.nav li a:hover { background-color: var(--nav-hover-link); }
 .visual a:hover .overlay-text { opacity: 1; }
 
 /* ==============================================================
-   09. BUTTON STYLE (demo)
-   ============================================================== */
+BUTTON STYLE
+============================================================== */
 .btn-primary {
   display: inline-block;
   margin-top: .8rem;
@@ -278,8 +275,8 @@ ul.nav li a:hover { background-color: var(--nav-hover-link); }
 .btn-primary:hover { background: #836d58; }
 
 /* ==============================================================
-   10. FOOTER
-   ============================================================== */
+FOOTER
+============================================================== */
 .site-footer {
   background: #111;
   color: #eee;
@@ -369,8 +366,8 @@ ul.nav li a:hover { background-color: var(--nav-hover-link); }
 }
 
 /* ==============================================================
-   11. RESPONSIVE ADJUSTMENTS
-   ============================================================== */
+RESPONSIVE ADJUSTMENTS
+============================================================== */
 @media (max-width: 768px) {
   /* Portfolio – stack on narrow screens */
   .portfolio-block .container {
