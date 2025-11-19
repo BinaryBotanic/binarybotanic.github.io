@@ -96,7 +96,9 @@ a:hover { text-decoration: none; }
     text-shadow: 0 0 3px 3px #000000;
 }
 
-/* Grundinställningar för hela menyn */
+/* --------------------------------------------------------------
+NAVIGATION
+--------------------------------------------------------------*/
 ul.nav {
     margin: 0;                     /* Ingen marginal runt <ul> */
     padding: 0;                    /* Ingen padding runt <ul> */
@@ -183,10 +185,6 @@ ul.nav {
 .portfolio-block .container.reverse{flex-direction:row-reverse;}
 
 
-
-/* CSS – lägg till i din befintliga stylesheet */
-
-/* Bas */
 .visual a {
     display: block;
     position: relative;
@@ -261,6 +259,52 @@ ul.nav {
 }
 .btn-primary:hover {
     background: #c03939;
+}
+
+/* ------------------------------------------------------------------
+   SPACING BETWEEN PORTFOLIO BLOCKS
+   ------------------------------------------------------------------ */
+.portfolio-block {
+    padding: 4rem 0;               /* generous vertical breathing room */
+}
+
+/* Ensure the visual column doesn’t stretch too tall on narrow screens */
+@media (max-width: 768px) {
+    .portfolio-block .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .visual,
+    .content,
+    .content2 {
+        width: 100%;
+        max-width: 500px;
+        text-align: left;
+    }
+    .visual a {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Slightly larger heading for each section */
+.portfolio-block h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: .8rem;
+    color: #539354;               /* matches your green accent */
+}
+
+/* Make the two‑image Canva row sit side‑by‑side but wrap on mobile */
+.portfolio-block .visual {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.portfolio-block .visual a {
+    flex: 1 1 45%;                /* roughly half the width */
+    max-width: 250px;
 }
 
 /* -------------------------------------------------
