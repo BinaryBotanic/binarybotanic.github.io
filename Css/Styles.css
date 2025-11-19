@@ -27,9 +27,9 @@ body {
   /* Colours */
   --color-primary:   #699953;    /* CTA / link colour */
   --color-text:      #222;       /* default text colour */
-  --nav-bg:          #836d58;
+  --nav-bg:          #699953;
   --nav-link:        #e0f0ff;
-  --nav-hover-bg:    #836d58;
+  --nav-hover-bg:    #699953;
   --nav-hover-link:  #466537;
 }
 
