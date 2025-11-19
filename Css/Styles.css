@@ -9,7 +9,7 @@ body {
   padding: 0;
   font-size: 100%;      /* 1 rem ≈ 16 px */
   line-height: 1.6;
-  background: #fafafa;           /* fallback colour */
+  background: var(--nav-bg);           /* fallback colour */
 }
 
 /* Box‑sizing */
@@ -28,7 +28,7 @@ DESIGN TOKENS
   --color-primary:   #699953;
   --color-primary-trans: rgba(70, 101, 55, 0.5);
   --color-text:      #222;
-  --nav-bg:          #699953;
+  --nav-bg:          #e3ecdf;
   --nav-link:        #e0f0ff;
   --nav-hover-bg:    #699953;
   --nav-hover-link:  #466537;
@@ -41,7 +41,7 @@ PAGE‑SPECIFIC THEME – ContentCreation
   --color-primary:   #836d58;
   --color-primary-trans: rgba(131, 109, 88, 0.5);
   --color-text:      #222;
-  --nav-bg:          #836d58;
+  --nav-bg:          #f3efeb;
   --nav-link:        #e0f0ff;
   --nav-hover-bg:    #836d58;
   --nav-hover-link:  #4f4235;
@@ -174,6 +174,32 @@ ul.nav li a {
 ul.nav li a:hover { background-color: var(--nav-hover-link); }
 
 /* ==============================================================
+about
+============================================================== */
+.About {
+  background: var(--color-primary);
+  margin: 0;
+  padding: 3vw 3vw 1.5vw 3vw;
+  color: var(--nav-link);
+}
+
+.About .container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;  
+}
+
+
+/* ==============================================================
+Fadedown
+============================================================== */
+.Fadedown {
+  height: 100px;
+  background-color: var(--color-primary);
+  background-image: linear-gradient(to bottom, var(--color-primary), var(--nav-bg));
+}
+/* ==============================================================
 PORTFOLIO BLOCKS
 ============================================================== */
 .portfolio-block {
@@ -245,11 +271,11 @@ PORTFOLIO BLOCKS
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  color: var(--nav-link);
   font-size: 50px;
-  text-shadow: 1px 1px 2px #ffe9bb,
+  text-shadow: 1px 1px 2px #ffffff,
                0 0 25px #ffffff,
-               0 0 5px #fff7e3;
+               0 0 5px #fff1ce;
   font-family: var(--font-heading, sans-serif);
   font-weight: bold;
   opacity: 0;
