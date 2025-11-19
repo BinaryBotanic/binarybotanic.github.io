@@ -270,8 +270,18 @@ BUTTON STYLE
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
+  transition: filter .18s ease,
+            transform .18s ease-out,
+            box-shadow .35s ease;
 }
-.btn-primary:hover { color: var(--color-primary); }
+.btn-primary:hover { 
+  background: var(--nav-hover-link);
+  transition: opacity .35s ease, 
+              transform .18s ease-in;
+  transform: scale(1.04);
+  box-shadow: 0 0 8px 8px rgba(0,0,0,0.2),
+              0 10px 10px 0 rgba(0,0,0,0.19);
+}
 
 /* ==============================================================
 FOOTER
