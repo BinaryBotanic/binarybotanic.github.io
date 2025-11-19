@@ -203,7 +203,7 @@ Fadedown
 PORTFOLIO BLOCKS
 ============================================================== */
 .portfolio-block {
-  padding: 4rem 0;
+  padding: 0.5vw 0;
 }
 .portfolio-block .container {
   display: flex;
