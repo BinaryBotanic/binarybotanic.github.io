@@ -56,11 +56,14 @@ a:hover { text-decoration: none; }
     text-align: center;
     min-height: 100vh;
     padding: 2rem;
-    background: url('../Assets/wallpaper.png')
-                center / cover no-repeat;
     z-index: 1;
     color: #ffffff;
+    background: cover no-repeat;
 
+}
+
+.index .hero {
+  background: url('../Assets/wallpaper.png')
 }
 
 .ContentCreation .hero {
