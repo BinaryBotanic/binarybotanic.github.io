@@ -40,3 +40,24 @@ lazyImages.forEach(img => imgObs.observe(img));
 Dynamic year
 ------------------------------------------------- */
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* -------------------------------------------------
+Hamburgare
+------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("ul.nav");
+  const fadedown = document.querySelector(".Fadedown");
+
+  if(toggle && nav && fadedown) {   // säkerhetscheck
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+
+      if(nav.classList.contains("show")) {
+        fadedown.style.opacity = "1";
+      } else {
+        fadedown.style.opacity = "0";
+      }
+    });
+  }
+});
