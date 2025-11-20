@@ -197,7 +197,11 @@ ul.nav {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .nav-toggle { display: block; }
+  .nav-toggle { 
+    display: block; 
+    color: var(--nav-hover-link);
+  
+  }
 
   ul.nav {
     flex-direction: column;
@@ -245,8 +249,9 @@ ABOUT SECTION
 }
 
 .portfolio-block .container {
+  padding: 0 10px 0 10px;
   display: flex;
-  gap: 2rem;
+  gap:2rem;
   flex-direction: row;
   align-items: center;
 }
