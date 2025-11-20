@@ -299,6 +299,7 @@ ABOUT SECTION
   box-shadow: 0 0 8px 8px rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.19);
 }
 
+
 .overlay-text {
   position: absolute;
   inset: 0;
@@ -323,7 +324,12 @@ ABOUT SECTION
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .portfolio-block .container,
-  .portfolio-block.reverse .container {
+  .portfolio-block.reverse .container{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .About .container {
     flex-direction: column;
     text-align: center;
   }
@@ -336,6 +342,11 @@ ABOUT SECTION
   .visual a {
     margin-bottom: 1rem;
   }
+
+  .About .visual {
+    display: none;
+  }
+
 }
 
 /* ===========================================================
