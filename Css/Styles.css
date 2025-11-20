@@ -220,12 +220,19 @@ ul.nav {
 }
 
 /* ===========================================================
-FADEDOWN
+FADE
 =========================================================== */
 .Fadedown {
   height: 4vw;
   background-color: var(--color-primary);
   mask-image: linear-gradient(to bottom, var(--color-primary), var(--color-transparent));
+  position: sticky;
+}
+
+.Fadeup {
+  height: 4vw;
+  background-color: var(--color-primary);
+  mask-image: linear-gradient(to top, var(--color-primary), var(--color-transparent));
   position: sticky;
 }
 /* ===========================================================
@@ -240,7 +247,7 @@ ABOUT SECTION
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* Portfolio blocks */
