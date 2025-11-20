@@ -267,6 +267,9 @@ ABOUT SECTION
 }
 
 .visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 0 1 40%;
   min-width: 200px;
   padding: 5px;
