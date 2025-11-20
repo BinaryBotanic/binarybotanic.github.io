@@ -28,6 +28,7 @@ DESIGN TOKENS
   --color-primary:   #699953;
   --color-primary-trans: rgba(70, 101, 55, 0.5);
   --color-text:      #222;
+  --color-transparent: rgba(255, 0, 0, 0.021);
   --nav-bg:          #e3ecdf;
   --nav-link:        #e0f0ff;
   --nav-hover-bg:    #699953;
@@ -153,25 +154,40 @@ NAVIGATION
 ============================================================== */
 ul.nav {
   margin: 0;
-  padding: 0;
+  padding:0 5vw 0 5vw;
   list-style: none;
-  overflow: hidden;
+  overflow: visible;
   background-color: var(--color-primary);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--font-heading);
+  position: sticky;
+  top: 0;
+  z-index: 10000;
 }
+
 ul.nav li a {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  justify-content: space-evenly;
+  align-items: stretch;
+  color: var(--nav-link);
+  padding: 1vw;
   text-decoration: none;
-  padding: 14px 16px;
-  font-size: large;
+  transition: filter .18s ease,
+            transform .18s ease-out,
+            box-shadow .35s ease;
+
 }
-ul.nav li a:hover { background-color: var(--nav-hover-link); }
+
+
+ul.nav li a:hover { 
+  color: var(--nav-hover-link);
+  transform: scale(1.2);
+  transition: opacity .35s ease, 
+              transform .18s ease-in;
+  font-size-adjust: 4vw;
+}
 
 /* ==============================================================
 about
@@ -195,9 +211,13 @@ about
 Fadedown
 ============================================================== */
 .Fadedown {
-  height: 100px;
+  overflow: visible;
+  height: 4vw;
   background-color: var(--color-primary);
-  background-image: linear-gradient(to bottom, var(--color-primary), var(--nav-bg));
+  mask-image: linear-gradient(to bottom, var(--color-primary),  var(--color-transparent));  
+  position: sticky;
+  top: 3.35vw;
+  z-index: 9999;
 }
 /* ==============================================================
 PORTFOLIO BLOCKS
