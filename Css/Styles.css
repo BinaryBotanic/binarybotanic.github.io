@@ -24,12 +24,13 @@ DESIGN TOKENS
 
   --color-primary: #699953;
   --color-primary-trans: rgba(70,101,55,0.5);
-  --color-text: #222;
+  --color-text: #466537;
   --color-transparent: rgba(255,0,0,0.02);
   --nav-bg: #e3ecdf;
   --nav-link: #e0f0ff;
   --nav-hover-bg: #699953;
   --nav-hover-link: #466537;
+  --foot-bg-color: #111111;
 }
 
 /* ==============================================================
@@ -38,7 +39,7 @@ PAGE‑SPECIFIC THEME – ContentCreation
 .ContentCreation {
   --color-primary:   #836d58;
   --color-primary-trans: rgba(131, 109, 88, 0.5);
-  --color-text:      #222;
+  --color-text:      #4f4235;
   --nav-bg:          #f3efeb;
   --nav-link:        #e0f0ff;
   --nav-hover-bg:    #836d58;
@@ -51,11 +52,21 @@ HEADINGS & TYPOGRAPHY
 h1, .hero h1, .nav li { 
   font-family: var(--font-heading); 
 }
-h2, h3, .hero h3 { 
-  font-family: var(--font-subhead); 
+h2, h3 { 
+  font-family: var(--font-subhead);
+  margin-top: 1rem;
+  margin-bottom: 0rem;
 }
 h4,h5,h6 { 
-  font-family: var(--font-primary); 
+  font-family: var(--font-primary);
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+
+}
+
+p {
+    margin-top: 0.1rem;
+    margin-bottom: 0rem;
 }
 
 a { 
@@ -223,17 +234,21 @@ ul.nav {
 FADE
 =========================================================== */
 .Fadedown {
-  height: 4vw;
+  height: 3vw;
   background-color: var(--color-primary);
   mask-image: linear-gradient(to bottom, var(--color-primary), var(--color-transparent));
-  position: sticky;
 }
 
 .Fadeup {
-  height: 4vw;
+  height: 3vw;
   background-color: var(--color-primary);
   mask-image: linear-gradient(to top, var(--color-primary), var(--color-transparent));
-  position: sticky;
+}
+
+.FootFade {
+  height: 3vw;
+  background-color: var(--foot-bg-color);
+  mask-image: linear-gradient(to top, var(--foot-bg-color), var(--color-transparent));
 }
 /* ===========================================================
 ABOUT SECTION
@@ -253,6 +268,7 @@ ABOUT SECTION
 /* Portfolio blocks */
 .portfolio-block {
   padding: 1rem 0;
+  color: var(--color-text);
 }
 
 .portfolio-block .container {
@@ -260,11 +276,27 @@ ABOUT SECTION
   display: flex;
   gap:2rem;
   flex-direction: row;
-  align-items: center;
+  align-items: top;
 }
 
 .portfolio-block.reverse .container {
   flex-direction: row-reverse;
+}
+
+.content {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* style for the image */
+.content img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 8px;
 }
 
 /* Columns */
@@ -279,8 +311,18 @@ ABOUT SECTION
   align-items: center;
   flex: 0 1 40%;
   min-width: 200px;
+  max-width: 400px;
   padding: 5px;
 }
+
+.dubblepic {
+    display: flex;          /* make them flex containers */
+    flex-direction: column; /* stack elements vertically */
+    justify-content: flex-start; /* force content to start at the top */
+    margin: 0;
+    padding: 0;
+}
+
 
 /* Images */
 .visual img { 
@@ -383,6 +425,9 @@ ABOUT SECTION
     display: none;
   }
 
+    .content {
+    width: 100%;
+  }
 }
 
 /* ===========================================================
