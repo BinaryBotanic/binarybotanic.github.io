@@ -46,6 +46,19 @@ PAGE‑SPECIFIC THEME – ContentCreation
   --nav-hover-link:  #4f4235;
 }
 
+/* ==============================================================
+PAGE‑SPECIFIC THEME – Programming
+============================================================== */
+.ContentCreation {
+  --color-primary:   #693f7f;
+  --color-primary-trans: rgb(105, 63, 127, 0.5);
+  --color-text:      #3e254c;
+  --nav-bg:          #f3efeb;
+  --nav-link:        #e0f0ff;
+  --nav-hover-bg:    #693f7f;
+  --nav-hover-link:  #3e254c;
+}
+
 /* ===========================================================
 HEADINGS & TYPOGRAPHY
 =========================================================== */
@@ -141,6 +154,9 @@ HERO
 }
 .UX .hero { 
   background-image: url('../Assets/SocialMedia.png'); 
+}
+.Programming .hero {
+  background-image: url('.../Assets/Programming');
 }
 
 /* ===========================================================
