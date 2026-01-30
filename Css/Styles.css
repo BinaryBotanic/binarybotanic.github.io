@@ -101,10 +101,6 @@ a:hover {
   text-decoration: none; 
 }
 
-/* ===========================================================
-CONTAINER
-=========================================================== */
-.container { max-width: 1200px; margin: 0 auto; }
 
 /* ===========================================================
 HERO
@@ -270,12 +266,33 @@ ABOUT SECTION
   gap: 2rem;
   align-items: flex-start; /* Correct version of "top" */
 }
+
+/* ===========================================================
+CONTAINER
+=========================================================== */
+.container { 
+  max-width: 1200px; 
+  margin: 
+  0 auto; 
+}
+
 .container2 {
   display: flex;
   flex-direction: column;
   align-items: top;
   padding: 2vw 3vw;
+}
 
+.content3 { 
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding-left:1rem;
+    padding-right:1rem;
+    box-sizing:border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;     
 }
 
 /* Portfolio blocks */
@@ -471,7 +488,134 @@ ABOUT SECTION
 .bc-next { right: 0; }
 
 
+/* ==============================================================
+PAGE‑SPECIFIC – Programming
+============================================================== */
 
+  .hello-world {
+    font-family: 'Megrim', cursive;
+    font-size: 7rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #693f7f, #699953, #ffffff);
+    background-size: 300% 300%;       /* allow gradient to move */
+    -webkit-background-clip: text;    /* Chrome/Safari */
+    background-clip: text;
+    color: transparent;               /* hide original color */
+    animation:
+      gradientShift 6s ease infinite,
+      pulseScale    2s ease-in-out infinite alternate;
+    text-align: center;
+  }
+
+  /* Gradient slides left‑right continuously */
+  @keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Gentle scaling “breathing” effect */
+  @keyframes pulseScale {
+    from { transform: scale(0.95); }
+    to   { transform: scale(1.05); }
+  }
+
+  /* The 8-ball container */
+  .wrapper{
+    text-align:center;
+  }
+
+  /* --------------------------------------------------------------
+     Question input
+  -------------------------------------------------------------- */
+.question-input{
+  /* Existing styles – keep them */
+  width:260px;                     /* you can keep the fixed width */
+  max-width:90vw;                  /* never exceed the viewport width */
+  font-size: var(--font-primary);
+  font-family: var(--font-primary);
+  border:none;
+  border-radius:.4rem;
+  outline:none;
+  background:var(--nav-bg);
+  color:var(--color-primary);
+
+  /* NEW centering helpers */
+  display:block;                   /* allows margin:auto to work */
+  margin:0 auto;                   /* horizontal centering */
+}
+
+/* OPTIONAL: make the input shrink a bit on very small screens */
+@media (max-width: 340px) {
+  .question-input{
+    width:60%;                     /* use a percentage instead of the fixed 260 px */
+  }
+}
+
+  /* --------------------------------------------------------------
+     The ball itself
+  -------------------------------------------------------------- */
+  .ball{
+    width: 400px;height:400px;
+    background:#000;
+    border-radius:50%;
+    position:relative;
+    box-shadow:
+      inset -8px -8px 15px rgba(255,255,255,.1),
+      inset 8px 8px 15px rgba(0,0,0,.6),
+      0 0 20px rgba(0,0,0,.5);
+    cursor:pointer;
+    transform-style:preserve-3d;
+    transition:transform .4s ease;
+  }
+
+  .ball::after{
+    font-family: var(--font-heading);
+    content:"8";
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    font-size:120px;
+    color:#fff;
+    text-shadow:0 0 8px rgba(255,255,255,.8);
+    transition:opacity .3s ease;
+    z-index:2;
+  }
+  .ball.hide-eight::after{
+    opacity:0;               
+  }
+
+  .answer-window{
+    width:140px;height:140px;
+    background:var(--color-primary);
+    font-family: var(--font-primary);
+    border-radius:50%;
+    position:absolute;
+    top:calc(50% - 70px);
+    left:calc(50% - 70px);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;
+    font-size:1rem;
+    text-align:center;
+    line-height:1.2;
+    opacity:0;
+    transition:opacity .3s ease;
+    pointer-events:none;
+    z-index:1;
+  }
+  .ball.active .answer-window{
+    opacity:1; 
+  }
+
+  /* Shake animation 
+  @keyframes shake{
+    0%   { transform:rotate(0deg); }
+    20%  { transform:rotate(-15deg); }
+    40%  { transform:rotate(15deg); }
+    60%  { transform:rotate(-10deg); }
+    80%  { transform:rotate(10deg); }
+    100% { transform:rotate(0deg); }
+  }
 
 /* ===========================================================
 BUTTONS
@@ -637,6 +781,11 @@ RESPONSIVE ADJUSTMENTS
 
   .content2 {
     max-width: 600px; /* special case preserved */
+  }
+
+  .content3{
+    padding-left:2rem;
+    padding-right:2rem;
   }
 
   .visual a {

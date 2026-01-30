@@ -63,6 +63,77 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ======================
+   8‑Ball
+====================== */
+ const answers = [
+  "It is certain.", "Without a doubt.", "You may rely on it.",
+  "Ask again after you finish your coffee.",
+  "The stars are busy… try later.",
+  "My crystal ball is on vacation.",
+  "Definitely… if you believe in unicorns.",
+  "Outlook: cloudy with a chance of pizza.",
+  "Signs point to… pizza. Always pizza.",
+  "Reply hazy, try reading the manual.",
+  "Ask your mother; she knows everything.",
+  "The future is bright… because you left the lights on.",
+  "My magic is on a coffee break.",
+  "Absolutely… if you’re a cat.",
+  "Nope. Nope. Nope. Nope. Nope.",
+  "The answer lies within… your snack drawer.",
+  "It’s a mystery wrapped in an enigma… and a burrito.",
+  "Sure, if you’re okay with a random guess.",
+  "The universe says: ‘Nah.’",
+  "Probably, but the 8‑ball is feeling shy today.",
+  "Ask again when Mercury isn’t in retrograde.",
+  "My psychic hamster says: ‘Cheese!’"
+  ];
+
+  // ----- Element references -------------------------------------------
+  const ball   = document.getElementById('magicBall');
+  const answer = document.getElementById('answer');
+  const input  = document.getElementById('question');
+
+  // ----- Helper: show answer -----------------------------------------
+  function showAnswer() {
+    const question = input.value.trim();
+    if (!question) {
+      alert('Please type a question first!');
+      return;
+    }
+
+    // Pick a random answer
+    const txt = answers[Math.floor(Math.random()*answers.length)];
+    answer.textContent = txt;
+
+    // Visual changes
+    ball.classList.add('active', 'hide-eight');
+    ball.style.animation = 'shake .6s';
+
+    // Remove shake animation after it ends (so it can be triggered again)
+    setTimeout(() => {
+      ball.style.animation = '';
+    }, 600);
+  }
+
+  // ----- Click on the ball -------------------------------------------
+  ball.addEventListener('click', showAnswer);
+
+  // ----- Press Enter while the input is focused -----------------------
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();   // stop form submit default
+      showAnswer();
+    }
+  });
+
+  // ----- Click outside the ball – hide answer & bring back the “8” ---
+  document.addEventListener('click', e => {
+    if (!ball.contains(e.target) && e.target !== input) {
+      ball.classList.remove('active', 'hide-eight');
+    }
+  });
+
+/* ======================
    INFINITE CAROUSEL JS
 ====================== */
 
@@ -118,3 +189,5 @@ document.querySelector('.binary-carousel').addEventListener('mouseenter', () => 
 document.querySelector('.binary-carousel').addEventListener('mouseleave', () => {
   autoplay = setInterval(() => move(1), 3000);
 });
+
+
