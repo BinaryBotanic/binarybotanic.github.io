@@ -23,54 +23,54 @@ DESIGN TOKENS
   --font-heading: 'Megrim', cursive;
   --font-subhead: 'Ranga', cursive;
 
-  --color-primary: #699953;
-  --color-primary-trans: rgba(70,101,55,0.5);
-  --color-text: #466537;
+  --color-primary: #638600;
+  --color-primary-trans: rgba(98, 134, 0, 0.5);
+  --color-text: #638600;
   --color-transparent: rgba(255,0,0,0.02);
-  --nav-bg: #e3ecdf;
+  --nav-bg: #111;
   --nav-link: #e0f0ff;
-  --nav-hover-bg: #699953;
-  --nav-hover-link: #466537;
-  --foot-bg-color: #111111;
+  --nav-hover-bg: rgb(150, 190, 132);
+  --nav-hover-link: #111;
+  --foot-bg-color: #638600;
 }
 
 /* ==============================================================
 PAGE‑SPECIFIC THEME – ContentCreation
 ============================================================== */
 .ContentCreation {
-  --color-primary:   #836d58;
-  --color-primary-trans: rgba(131, 109, 88, 0.5);
-  --color-text:      #4f4235;
-  --nav-bg:          #f3efeb;
+  --color-primary:   #007086;
+  --color-primary-trans: rgba(0, 112, 134, 0.5);
+  --color-text:      #007086;
+  --nav-bg:          #111;
   --nav-link:        #e0f0ff;
-  --nav-hover-bg:    #836d58;
-  --nav-hover-link:  #4f4235;
+  --nav-hover-bg:    #6396a0;
+  --nav-hover-link:  #111;
 }
 
 /* ==============================================================
 PAGE‑SPECIFIC THEME – Programming
 ============================================================== */
 .Programmering {
-  --color-primary:   #693f7f;
-  --color-primary-trans: rgb(105, 63, 127, 0.5);
-  --color-text:      #3e254c;
-  --nav-bg:          #f3efeb;
+  --color-primary:   #84009f;
+  --color-primary-trans: rgba(133, 0, 159, 0.5);
+  --color-text:      #84009f;
+  --nav-bg:          #111;
   --nav-link:        #e0f0ff;
-  --nav-hover-bg:    #693f7f;
-  --nav-hover-link:  #3e254c;
+  --nav-hover-bg:    #875891;
+  --nav-hover-link:  #111;
 }
 
 /* ==============================================================
 PAGE‑SPECIFIC THEME – Education
 ============================================================== */
 .Utbildning {
-  --color-primary:   #3d3835;
-  --color-primary-trans: rgba(61, 56, 53, 0.5);
-  --color-text:      #3d3835;
-  --nav-bg:          #f3efeb;
+  --color-primary:   #875727;
+  --color-primary-trans: rgba(135, 87, 39, 0.5);
+  --color-text:      #875727;
+  --nav-bg:          #111;
   --nav-link:        #e0f0ff;
-  --nav-hover-bg:    #79726d;
-  --nav-hover-link:  #79726d;
+  --nav-hover-bg:    #875727;
+  --nav-hover-link:  #111;
 }
 
 /* ==============================================================
