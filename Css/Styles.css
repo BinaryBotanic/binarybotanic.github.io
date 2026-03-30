@@ -168,6 +168,10 @@ HERO
   background-image: url('../Assets/Programmering.png');
 }
 
+.Education .hero {
+  background-image: url('../Assets/Bakgrund.education.jpg');
+}
+
 /* ===========================================================
 NAVIGATION
 =========================================================== */
