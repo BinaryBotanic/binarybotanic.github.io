@@ -442,16 +442,13 @@ CONTAINER
   text-shadow: 1px 1px 2px #fff, 0 0 25px #fff, 0 0 5px #fff1ce;
   font-family: var(--font-heading);
   font-weight: bold;
-  opacity: 0;
+  opacity: 0.5;
   pointer-events: none;
 }
 .visual a:hover .overlay-text { 
   opacity: 1; 
 }
 
-.visual a:hover .overlay-text {
-  opacity: 1;
-}
 
 .link-item {
     display: inline-flex;
