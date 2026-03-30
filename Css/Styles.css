@@ -691,8 +691,10 @@ FOOTER
   color: #eee;
   padding: 3rem 1rem 2rem;
   font-family: var(--font-primary);
+  list-style: none;
 }
 .footer-container {
+
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -703,6 +705,7 @@ FOOTER
 }
 
 .footer-brand {
+  align-items: center;
   flex: 1;
   min-width: 200px;
   display: flex;
@@ -734,6 +737,7 @@ FOOTER
   text-decoration: none; 
   font-size: .95rem; 
   transition: color .2s ease; 
+  list-style: none;
 }
 
 .footer-nav a:hover { 
@@ -749,12 +753,12 @@ FOOTER
 }
 
 .social-item { 
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   gap: .6rem; 
   padding: .45rem .7rem; 
   border-radius: .5rem; 
-  background: #ffffff14; 
+  background: #111; 
   text-decoration: none; 
   transition: background .3s ease, transform .2s ease; 
 }
