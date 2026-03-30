@@ -59,6 +59,19 @@ PAGE‑SPECIFIC THEME – Programming
   --nav-hover-link:  #3e254c;
 }
 
+/* ==============================================================
+PAGE‑SPECIFIC THEME – Education
+============================================================== */
+.Education {
+  --color-primary:   #503c31;
+  --color-primary-trans: rgba(80, 60, 49, 0.5);
+  --color-text:      #503c31;
+  --nav-bg:          #f3efeb;
+  --nav-link:        #e0f0ff;
+  --nav-hover-bg:    #4e4744;
+  --nav-hover-link:  #503c31;
+}
+
 /* ===========================================================
 HEADINGS & TYPOGRAPHY
 =========================================================== */
