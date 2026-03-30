@@ -66,26 +66,28 @@ document.addEventListener("DOMContentLoaded", () => {
    8‑Ball
 ====================== */
  const answers = [
-  "It is certain.", "Without a doubt.", "You may rely on it.",
-  "Ask again after you finish your coffee.",
-  "The stars are busy… try later.",
-  "My crystal ball is on vacation.",
-  "Definitely… if you believe in unicorns.",
-  "Outlook: cloudy with a chance of pizza.",
-  "Signs point to… pizza. Always pizza.",
-  "Reply hazy, try reading the manual.",
-  "Ask your mother; she knows everything.",
-  "The future is bright… because you left the lights on.",
-  "My magic is on a coffee break.",
-  "Absolutely… if you’re a cat.",
-  "Nope. Nope. Nope. Nope. Nope.",
-  "The answer lies within… your snack drawer.",
-  "It’s a mystery wrapped in an enigma… and a burrito.",
-  "Sure, if you’re okay with a random guess.",
-  "The universe says: ‘Nah.’",
-  "Probably, but the 8‑ball is feeling shy today.",
-  "Ask again when Mercury isn’t in retrograde.",
-  "My psychic hamster says: ‘Cheese!’"
+"Det är säkert.",
+"Utan tvekan.",
+"Du kan lita på det.",
+"Försök igen efter att du druckit klart din kaffe.",
+"Stjärnorna är upptagna… försök senare.",
+"Mitt kristallklot är på semester.",
+"Definitivt… om du tror på enhörningar.",
+"Utsikten: molnigt med chansen för kaffe.",
+"Tecknen pekar på… Kaffe. Alltid kaffe...",
+"Svaret är otydligt, försök att läsa manualen.",
+"Fråga din mamma, hon vet allt.",
+"Framtiden är ljus… för du lämnade lamporna på.",
+"Mitt magi tar en kaffepaus.",
+"Absolut… om du är en katt.",
+"Nä. Nä. Nä. Nä. Nä.",
+"Svaret finns inom dig… eller i din närmaste kaffekopp.",
+"Det är en gåta inpackad i ett mysterium… och jag är inte i humör att lösa det.",
+"Säkert, om du är okej med en slumpmässig gissning.",
+"Universum säger: 'Nä.'",
+"Troligen, men 8-bollen känner sig blyg idag.",
+"Försök igen när Merkurius inte är i sne.",
+"Mitt psykiska hamster säger: 'Ost!'"
   ];
 
   // ----- Element references -------------------------------------------

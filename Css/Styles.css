@@ -63,13 +63,13 @@ PAGE‑SPECIFIC THEME – Programming
 PAGE‑SPECIFIC THEME – Education
 ============================================================== */
 .Utbildning {
-  --color-primary:   #503c31;
-  --color-primary-trans: rgba(80, 60, 49, 0.5);
-  --color-text:      #503c31;
+  --color-primary:   #3d3835;
+  --color-primary-trans: rgba(61, 56, 53, 0.5);
+  --color-text:      #3d3835;
   --nav-bg:          #f3efeb;
   --nav-link:        #e0f0ff;
-  --nav-hover-bg:    #4e4744;
-  --nav-hover-link:  #503c31;
+  --nav-hover-bg:    #79726d;
+  --nav-hover-link:  #79726d;
 }
 
 /* ===========================================================
@@ -543,12 +543,12 @@ PAGE‑SPECIFIC – Programming
   }
 
   /* --------------------------------------------------------------
-     Question input
+     8-ball
   -------------------------------------------------------------- */
 .question-input{
   /* Existing styles – keep them */
-  width:260px;                     /* you can keep the fixed width */
-  max-width:90vw;                  /* never exceed the viewport width */
+  width:260px; 
+  max-width:90vw;
   font-size: var(--font-primary);
   font-family: var(--font-primary);
   border:none;
@@ -558,14 +558,14 @@ PAGE‑SPECIFIC – Programming
   color:var(--color-primary);
 
   /* NEW centering helpers */
-  display:block;                   /* allows margin:auto to work */
-  margin:0 auto;                   /* horizontal centering */
+  display:block;
+  margin:0 auto;
 }
 
-/* OPTIONAL: make the input shrink a bit on very small screens */
+
 @media (max-width: 340px) {
   .question-input{
-    width:60%;                     /* use a percentage instead of the fixed 260 px */
+    width:60%;
   }
 }
 
